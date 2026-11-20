@@ -23,10 +23,16 @@ export const HeroSection = ({ profile, resume, socialLinks = [] }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-[96vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[96vh] flex items-center justify-center pt-28 pb-16 overflow-hidden"
+      style={{
+        background: 'radial-gradient(ellipse 95% 85% at 72% 40%, #153258 0%, #0c213d 30%, #07162b 65%, #040d1a 100%)',
+      }}
+    >
       {/* Background Volumetric Glows */}
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-cyan-600/15 via-blue-600/10 to-purple-600/15 blur-[140px] pointer-events-none rounded-full"></div>
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-gradient-to-bl from-purple-600/15 via-cyan-600/10 to-transparent blur-[130px] pointer-events-none rounded-full"></div>
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-cyan-600/10 via-blue-600/10 to-purple-600/10 blur-[140px] pointer-events-none rounded-full"></div>
+      <div className="absolute bottom-10 right-1/4 w-[500px] h-[350px] bg-gradient-to-bl from-blue-600/15 via-cyan-600/10 to-transparent blur-[130px] pointer-events-none rounded-full"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">

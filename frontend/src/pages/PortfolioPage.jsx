@@ -58,10 +58,10 @@ export const PortfolioPage = ({ showToast }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#030712] flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-[#06152a] flex flex-col items-center justify-center p-6 text-center">
         <div className="relative mb-6">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 via-blue-500 to-purple-600 p-[2px] animate-spin">
-            <div className="w-full h-full bg-[#030712] rounded-2xl"></div>
+            <div className="w-full h-full bg-[#06152a] rounded-2xl"></div>
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <Shield className="w-7 h-7 text-cyan-400" />
@@ -76,7 +76,7 @@ export const PortfolioPage = ({ showToast }) => {
 
   if (error || !data) {
     return (
-      <div className="min-h-screen bg-[#030712] flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-[#06152a] flex flex-col items-center justify-center p-6 text-center">
         <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 mb-4 shadow-xl shadow-rose-950/40">
           <AlertTriangle className="w-10 h-10" />
         </div>
@@ -94,7 +94,7 @@ export const PortfolioPage = ({ showToast }) => {
   }
 
   return (
-    <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#06152a] text-slate-100 flex flex-col selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden">
       
       {/* 3D Deep Space WebGL Interactive Background */}
       <CanvasBackground />

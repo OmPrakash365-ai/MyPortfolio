@@ -47,6 +47,15 @@ export const Footer = ({ profile }) => {
               <span>Return to Apex</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
+
+            <a
+              href="/admin"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-400 hover:text-cyan-300 hover:border-cyan-500/40 transition-all shadow-sm"
+              title="Admin Gateway - ID & Password Required"
+            >
+              <Shield className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Admin Gateway</span>
+            </a>
           </div>
 
         </div>
@@ -56,8 +65,17 @@ export const Footer = ({ profile }) => {
           <div>
             © {new Date().getFullYear()} {profile?.name || 'Om Prakash'}. All rights reserved.
           </div>
-          <div>
-            CYBERPUNK 3D UNIVERSE // THREE.JS & REACT THREE FIBER
+          <div className="flex items-center gap-3">
+            <span>CYBERPUNK 3D UNIVERSE // THREE.JS & REACT THREE FIBER</span>
+            <span className="text-slate-800">•</span>
+            <a
+              href="/admin"
+              className="inline-flex items-center gap-1 text-slate-500 hover:text-cyan-400 transition-colors"
+              title="Admin Portal - Secure Login Required"
+            >
+              <Shield className="w-3 h-3 text-cyan-400/60" />
+              <span>Admin Login</span>
+            </a>
           </div>
         </div>
 

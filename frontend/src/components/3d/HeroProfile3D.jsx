@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ShieldCheck, Lock } from 'lucide-react';
 
 export const HeroProfile3D = ({ profile }) => {
@@ -6,8 +6,14 @@ export const HeroProfile3D = ({ profile }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [imgSrc, setImgSrc] = useState(
-    profile?.avatar || '/profile/omprakash_portrait.jpg'
+    profile?.avatar || '/media/profile/omprakash_portrait.jpg'
   );
+
+  useEffect(() => {
+    if (profile?.avatar) {
+      setImgSrc(profile.avatar);
+    }
+  }, [profile?.avatar]);
 
   // Smooth mouse tilt handler for realistic depth
   const handleMouseMove = (e) => {
@@ -82,7 +88,7 @@ export const HeroProfile3D = ({ profile }) => {
             {/* High-Resolution Suit Portrait */}
             <img
               src={imgSrc}
-              onError={() => setImgSrc('/profile/omprakash_portrait.jpg')}
+              onError={() => setImgSrc('/media/profile/omprakash_portrait.jpg')}
               alt={profile?.name || "Om Prakash"}
               className="w-full h-full object-cover object-top filter contrast-[1.04] brightness-[0.98] transition-transform duration-500 group-hover:scale-[1.03]"
             />

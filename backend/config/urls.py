@@ -25,10 +25,17 @@ def serve_assets(request, path):
         return FileResponse(open(file_path, "rb"))
     raise Http404("Asset not found")
 
+def serve_profile_dist(request, path):
+    file_path = FRONTEND_DIST / "profile" / path
+    if file_path.exists() and file_path.is_file():
+        return FileResponse(open(file_path, "rb"))
+    raise Http404("Profile asset not found")
+
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("api/", include("api.urls")),
     path("assets/<path:path>", serve_assets, name="frontend-assets"),
+    path("profile/<path:path>", serve_profile_dist, name="frontend-profile"),
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
 ]
 

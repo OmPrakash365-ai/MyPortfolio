@@ -77,6 +77,7 @@ class Command(BaseCommand):
         profile.phone = "+1 (555) 729-4102"
         profile.location = "San Francisco, CA / Remote"
         profile.open_to_work = True
+        profile.avatar = "profile/omprakash_portrait.jpg"
         profile.years_of_experience = 4
         profile.projects_completed = 32
         profile.technologies_mastered = 24

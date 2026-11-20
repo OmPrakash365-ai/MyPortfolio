@@ -32,7 +32,7 @@ export const HeroSection = ({ profile, resume, socialLinks = [] }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Greeting, Typings, CTAs & Socials */}
-          <div className="lg:col-span-7 text-center lg:text-left order-2 lg:order-1 space-y-6">
+          <div className="lg:col-span-6 text-center lg:text-left order-2 lg:order-1 space-y-6">
             
             {/* Availability Status Indicator */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/40 text-xs font-mono text-cyan-300 backdrop-blur-md shadow-lg shadow-cyan-950/50">
@@ -134,7 +134,7 @@ export const HeroSection = ({ profile, resume, socialLinks = [] }) => {
           </div>
 
           {/* Right Column: 3D Holographic Profile Environment */}
-          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
+          <div className="lg:col-span-6 flex justify-center order-1 lg:order-2">
             <HeroProfile3D profile={profile} />
           </div>
 

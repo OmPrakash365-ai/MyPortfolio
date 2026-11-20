@@ -38,7 +38,7 @@ export function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <div className="min-h-screen bg-[#06152a] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-300">
+        <div className="min-h-screen bg-[#030712] text-slate-100 font-sans selection:bg-cyan-500/30 selection:text-cyan-300">
           {renderRoute()}
           {toast && <Toast toast={toast} onClose={() => setToast(null)} />}
         </div>

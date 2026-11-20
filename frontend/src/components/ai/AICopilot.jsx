@@ -343,16 +343,14 @@ export const AICopilot = ({ portfolioData, onSelectProject, isOpen: controlledIs
       {/* ======================================================== */}
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
-          {/* Pulsing Tooltip Pill */}
-          {hasUnread && (
-            <div
-              onClick={() => setIsOpen(true)}
-              className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-slate-950/90 border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-xl shadow-cyan-950/70 backdrop-blur-md cursor-pointer hover:border-cyan-400 transition-all animate-bounce"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" />
-              <span>Ask Agent Prakash</span>
-            </div>
-          )}
+          {/* Always Visible Launcher Pill matching design */}
+          <div
+            onClick={() => setIsOpen(true)}
+            className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-[#081528]/90 border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-xl shadow-cyan-950/70 backdrop-blur-md cursor-pointer hover:border-cyan-400 hover:text-white transition-all hover:scale-105"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Ask Agent Prakash</span>
+          </div>
 
           {/* Hologram Launcher Button */}
           <button

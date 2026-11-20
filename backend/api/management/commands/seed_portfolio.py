@@ -81,6 +81,7 @@ class Command(BaseCommand):
         profile.projects_completed = 32
         profile.technologies_mastered = 24
         profile.security_assessments = 50
+        profile.avatar = "profile/omprakash_portrait.jpg"
         profile.save()
         self.stdout.write(self.style.SUCCESS("Profile seeded."))
 

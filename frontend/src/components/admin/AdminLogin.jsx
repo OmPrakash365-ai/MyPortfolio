@@ -4,8 +4,8 @@ import { useAuth } from '../../context/AuthContext';
 
 export const AdminLogin = ({ onSuccess, showToast }) => {
   const { login } = useAuth();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('adminpassword123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -106,12 +106,6 @@ export const AdminLogin = ({ onSuccess, showToast }) => {
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950/80 border border-slate-800 text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-cyan-500 transition-colors font-mono"
                 />
               </div>
-            </div>
-
-            {/* Seeded default hint */}
-            <div className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-[11px] font-mono text-slate-400">
-              <span className="text-cyan-400 font-bold block mb-0.5">Seeded Credentials:</span>
-              <span>Username: <strong className="text-slate-200">admin</strong> | Password: <strong className="text-slate-200">adminpassword123</strong></span>
             </div>
 
             <button

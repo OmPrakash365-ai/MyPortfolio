@@ -126,3 +126,21 @@ class ContactMessageSerializer(serializers.ModelSerializer):
         model = ContactMessage
         fields = ["id", "name", "email", "subject", "message", "is_read", "created_at"]
         read_only_fields = ["id", "created_at"]
+
+
+from django.contrib.auth import get_user_model
+from django.db.models import Q
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+User = get_user_model()
+
+class EmailOrUsernameTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        username_or_email = attrs.get("username")
+        if username_or_email:
+            user = User.objects.filter(
+                Q(username__iexact=username_or_email) | Q(email__iexact=username_or_email)
+            ).first()
+            if user:
+                attrs["username"] = user.username
+        return super().validate(attrs)

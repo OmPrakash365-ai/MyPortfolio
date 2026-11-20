@@ -34,9 +34,14 @@ from .serializers import (
     SocialLinkSerializer,
     ResumeSerializer,
     ContactMessageSerializer,
+    EmailOrUsernameTokenObtainPairSerializer,
 )
 
 User = get_user_model()
+
+
+class EmailOrUsernameTokenObtainPairView(TokenObtainPairView):
+    serializer_class = EmailOrUsernameTokenObtainPairSerializer
 
 
 # -------------------------------------------------------------

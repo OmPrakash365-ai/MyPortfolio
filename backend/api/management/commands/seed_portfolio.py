@@ -25,14 +25,17 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         self.stdout.write("Starting database seeding...")
 
-        # 1. Create or update admin user
+        # 1. Create admin user only if it does not exist (never overwrite custom password)
         admin_user, created = User.objects.get_or_create(username="admin")
-        admin_user.email = "admin@portfolio.com"
-        admin_user.set_password("adminpassword123")
-        admin_user.is_staff = True
-        admin_user.is_superuser = True
-        admin_user.save()
-        self.stdout.write(self.style.SUCCESS(f"Admin user set: admin / adminpassword123 (email: admin@portfolio.com)"))
+        if created:
+            admin_user.email = "admin@portfolio.com"
+            admin_user.set_password(os.getenv("ADMIN_PASSWORD", "adminpassword123"))
+            admin_user.is_staff = True
+            admin_user.is_superuser = True
+            admin_user.save()
+            self.stdout.write(self.style.SUCCESS("Initial admin user created."))
+        else:
+            self.stdout.write(self.style.SUCCESS("Admin user exists. Existing password preserved."))
 
         # 2. Seed Profile
         profile, _ = Profile.objects.get_or_create(pk=1)

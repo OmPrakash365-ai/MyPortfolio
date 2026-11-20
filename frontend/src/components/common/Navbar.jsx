@@ -132,15 +132,6 @@ export const Navbar = ({ profile, resume, onOpenSearch }) => {
                 {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-400" />}
               </button>
 
-              {/* Admin Portal Button */}
-              <a
-                href="/admin"
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-cyan-950/80 to-purple-950/80 border border-cyan-500/40 text-[11px] font-mono text-cyan-300 hover:border-cyan-400 hover:text-white transition-all shadow-md shadow-cyan-950/40"
-              >
-                <Shield className="w-3 h-3 text-cyan-400" />
-                <span>ADMIN // OP</span>
-              </a>
-
               {/* Mobile Drawer Trigger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -192,14 +183,6 @@ export const Navbar = ({ profile, resume, onOpenSearch }) => {
               <Search className="w-4 h-4" />
               <span>Search Database (⌘K)</span>
             </button>
-
-            <a
-              href="/admin"
-              className="text-xs font-mono text-purple-400 flex items-center gap-1.5"
-            >
-              <Shield className="w-3.5 h-3.5" />
-              <span>Admin Console</span>
-            </a>
           </div>
         </div>
       )}

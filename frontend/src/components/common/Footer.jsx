@@ -47,14 +47,6 @@ export const Footer = ({ profile }) => {
               <span>Return to Apex</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
-
-            <a
-              href="/admin"
-              className="inline-flex items-center gap-1.5 text-xs font-mono text-purple-400 hover:text-purple-300 transition-colors"
-            >
-              <Shield className="w-3.5 h-3.5" />
-              <span>Admin Control Plane</span>
-            </a>
           </div>
 
         </div>

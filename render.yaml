@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: om-prakash-3d-portfolio
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "cd backend && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.12
+      - key: NODE_VERSION
+        value: 20
+      - key: DEBUG
+        value: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-db
+          property: connectionString
+
+databases:
+  - name: portfolio-db
+    databaseName: portfolio
+    user: portfolio_user
+    plan: free

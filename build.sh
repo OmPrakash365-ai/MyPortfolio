@@ -15,5 +15,6 @@ pip install -r requirements.txt
 echo "==> 3. Running Database Migrations & Hydrating Data..."
 python manage.py migrate
 python manage.py loaddata api/fixtures/initial_data.json || true
+python manage.py seed_portfolio
 
 echo "==> Build complete and ready for deployment!"
